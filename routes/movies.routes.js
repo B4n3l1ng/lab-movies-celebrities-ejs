@@ -38,4 +38,13 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:movieId", async (req, res) => {
+  const movie = await Movie.findById(req.params.movieId).populate(
+    "cast",
+    " ",
+    Celebrity
+  );
+  res.render("movies/movie-details", { movie });
+});
+
 module.exports = router;

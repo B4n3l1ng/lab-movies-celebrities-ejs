@@ -1,0 +1,11 @@
+<h1>Movie details:</h1>
+
+<h4><%= movie.title %></h4>
+<h5>Genres:</h5>
+<p><%= movie.genre %></p>
+<h5>Movie's plot:</h5>
+<p><%= movie.plot %></p>
+<h4>Cast:</h4>
+<% movie.cast.forEach(element => { %>
+<p><%= element.name %></p>
+<% }) %>

@@ -2,6 +2,7 @@
 <a href=""></a>
 <% movies.forEach(element => { %>
 <h4><%= element.title %></h4>
+<a href="/movies/<%- element.id %>">Details</a>
 <% }) %>
 
 <a href="/movies/create">Create a new movie</a>
