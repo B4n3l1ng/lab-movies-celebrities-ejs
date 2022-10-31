@@ -1,11 +1,28 @@
-<h1>Movie details:</h1>
+<h2>Movie details:</h1>
 
 <h4><%= movie.title %></h4>
 <h5>Genres:</h5>
-<p><%= movie.genre %></p>
+<ul>
+<% movie.genre.forEach(element => { %>
+<li>
+    <%= element  %> 
+</li>    
+<% }) %>
+</ul>
 <h5>Movie's plot:</h5>
 <p><%= movie.plot %></p>
 <h4>Cast:</h4>
+<div>
 <% movie.cast.forEach(element => { %>
-<p><%= element.name %></p>
+<p>Name: <%= element.name %></p>
+<p>Occupation: <%= element.occupation %></p>
+<p>Catch Phrase: <%= element.catchPhrase %></p>
 <% }) %>
+</div>
+
+<form action="/movies/<%= movie.id %>/delete" method="GET">
+    <button>Delete movie</button>
+</form>
+<form action="/movies/<%= movie.id %>/edit">
+    <button>Edit movie</button>
+</form>

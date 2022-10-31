@@ -6,7 +6,7 @@ const movieSchema = new Schema({
     type: String,
   },
   genre: {
-    type: String,
+    type: [String],
   },
   plot: {
     type: String,
